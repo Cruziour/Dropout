@@ -1,0 +1,10 @@
+export { default as Register } from './Register'
+export { default as Login } from './Login'
+export { default as Navbar } from './Navbar'
+export { default as Forget } from './Forget'
+export { default as Header } from './Header'
+export { default as MainPage } from './MainPage'
+export { default as Course } from './Course'
+export { default as Layout } from './Layout'
+export { default as Footer } from './Footer'
+
