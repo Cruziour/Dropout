@@ -19,6 +19,7 @@ const Header = () => {
             <p>AI Powered Curriculum</p>
           </div>
           <h1 className='font-bold text-3xl md:text-6xl stroke-lime-100 mt-6 md:mt-8'>
+            Rupesh Kumar Raushan
             Master <span className='text-green-400'>Web <span className='text-orange-500'>development</span></span> in a virtual College
           </h1>
           <p className='text-md text-gray-100 mt-4 md:text-xl text-opacity-85'>
