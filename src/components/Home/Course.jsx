@@ -4,7 +4,7 @@ import Translate from '../../assets/Image/Translate.png'
 
 const Course = () => {
   return (
-    <div className='w-full md:mt-28 mt-14'>
+    <body className='w-full md:mt-28 mt-14'>
       <div className='w-full text-center'>
         <h1 className='text-4xl md:text-5xl mb-4 font-bold'>Course <span className='text-orange-500'>Curriculum</span></h1>
         <div className='w-full h-auto flex md:justify-around flex-wrap items-center mt-8 md:mt-16 text-lg gap-y-5'>
@@ -74,7 +74,7 @@ const Course = () => {
           <DivItem children={"Grp Project 4 : Full Stack Project 1"} />
         </div>
       </div>
-    </div>
+    </body>
   )
 }
 

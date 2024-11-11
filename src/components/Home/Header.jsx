@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='w-full px-4 md:flex md:justify-center md:items-center mt-10 md:mt-16 gap-10 md:pr-20 md:pl-20'>
+      <header className='w-full px-4 md:flex md:justify-center md:items-center mt-10 md:mt-16 gap-10 md:pr-20 md:pl-20'>
         <div className='md:w-1/2'>
           <div className='w-fit px-6 py-2 bg-gradient-to-l to-red-400 from-orange-400 font-semibold rounded-full text-black border-2 border-red-500'>
             <p>AI Powered Curriculum</p>
@@ -53,7 +53,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   );
 }
