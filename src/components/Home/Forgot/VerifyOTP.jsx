@@ -6,13 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const VerifyOTP = () => {
-    const {register, handleSubmit} = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const verifyOTP = (data) => {        
-        alert(data.otp)
-        navigate('/newpassword')
+        if (!errors.otp) {
+            alert(data.otp)
+            navigate('/newpassword')
+        }
     }
     const goToNavbar = () => {
         navigate('/')
@@ -29,9 +31,16 @@ const VerifyOTP = () => {
             </div>
             <div className='px-6 mt-16'>
                 <form onSubmit={handleSubmit(verifyOTP)}>
-                    <Input placeholder='OTP' type='text' className='px-4 mt-1' {...register('otp', {
-                        required: true,
-                    })} />
+                    <Input 
+                        placeholder='OTP' 
+                        type='text' 
+                        className='px-4 mt-1' 
+                        {...register('otp', {
+                            required: true,
+                            pattern: /^[0-9]{4,6}$/, // added pattern validation for OTP
+                        })} 
+                    />
+                    {errors.otp && <p className='text-red-500'>Invalid OTP</p>}
                     <Button children={'Verify OTP'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} />
                 </form>
             </div>

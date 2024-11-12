@@ -6,13 +6,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Forget = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false);
 
-    const forget = (data) => {
-        // Perform your password reset logic here
-        alert(`Password reset request for: ${data.email}`);
-        navigate('/password')
+    const forget = async (data) => {
+        setLoading(true);
+        try {
+            // Perform your password reset logic here
+            alert(`Password reset request for: ${data.email}`);
+            navigate('/password')
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
     }
 
     const goToNavbar = () => {
@@ -33,11 +41,11 @@ const Forget = () => {
                         required: true,
                         validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 'Please Enter Proper Email Address'
                     })} />
-                    
+                    {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
                     <div className='pl-2 mt-1'>
                         <Link to={'/login'} className='text-sm text-blue-600 shadow-inner'>go to Login</Link>
                     </div>
-                    <Button children={'Send OTP'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} />
+                    <Button children={loading ? 'Sending...' : 'Send OTP'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} disabled={loading} />
                 </form>
             </div>
         </div>

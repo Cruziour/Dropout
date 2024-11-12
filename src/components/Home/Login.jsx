@@ -6,14 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
-    const {register, handleSubmit} = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
     const [isPasswordVisiable, setIsPasswordVisiable] = useState(false)
+    const [error, setError] = useState('')
 
-    const auth  = (data) => {
+    const auth = async (data) => {
         setError('')
         try {
             console.log(data);
+            alert('Login Successfully')
+            navigate('/')
         } catch (error) {
             setError('Error')
         }
@@ -34,31 +37,41 @@ const Login = () => {
       </div>
       <div className='px-6 mt-16'>
         <form onSubmit={handleSubmit(auth)}>
-          <Input placeholder='Email' type='email' className='px-4 mt-2' {...register('email', {
-            required: true
-          })} />
+          <Input 
+            placeholder='Email' 
+            type='email' 
+            className='px-4 mt-2' 
+            {...register('email', {
+              required: true
+            })} 
+          />
+          {errors.email && <p className='text-red-500'>Email is required</p>}
           
           <div className="relative mt-2">
-            <Input 
-              placeholder='Password' 
-              type={isPasswordVisiable ? 'text' : 'password'} 
-              className='px-4 pr-10' 
-              {...register('password', {
-                required: true,
-                validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 'Please Enter Proper Password'
-              })} 
-            />
-            <FontAwesomeIcon 
-              icon={isPasswordVisiable ? faEye : faEyeSlash} 
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
-              onClick={() => setIsPasswordVisiable(!isPasswordVisiable)} 
-            />
+              <Input 
+                  placeholder='Password' 
+                  type={isPasswordVisiable ? 'text' : 'password'} 
+                  className='px-4 pr-10' 
+                  {...register('password', {
+                      required: true,
+                      minLength: {
+                          value: 6,
+                          message: 'Password must be at least 6 characters long'
+                      }
+                  })} />
+              <FontAwesomeIcon 
+                  icon={isPasswordVisiable ? faEye : faEyeSlash} 
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
+                  onClick={() => setIsPasswordVisiable(!isPasswordVisiable)} 
+              />
+              {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
           </div>
           <div className='pl-2 mt-1'>
             <Link to={'/forgetpassword'} className='text-sm text-blue-600 shadow-inner'>Forget password?</Link>
           </div>
           
           <Button children={'Login'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} />
+          {error && <p className='text-red-500'>{error}</p>}
         </form>
         <div className='md:mt-3 mt-4 text-center text-white text-opacity-75 text-md'>
           <Link to={'/register'}>New User? Register Here</Link>
