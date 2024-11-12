@@ -28,7 +28,11 @@ const Login = () => {
       <div className='flex items-start justify-end w-full pr-4 pt-2'>
         <Button children={<FontAwesomeIcon icon={faXmark} />} className='w-fit h-8 bg-white bg-opacity-20' onClick={goToNavbar} />
       </div>
-      <div className='px-6 mt-20'>
+      <div className='w-full text-center mt-4'>
+        <h1 className='text-3xl font-semibold leading-snug'>Login</h1>
+        <p className='text-gray-400'>Welcome back!</p>
+      </div>
+      <div className='px-6 mt-16'>
         <form onSubmit={handleSubmit(auth)}>
           <Input placeholder='Email' type='email' className='px-4 mt-2' {...register('email', {
             required: true
