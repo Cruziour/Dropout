@@ -4,24 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar styles */
+/* For Webkit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Background of the scrollbar track */
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
+  background: rgba(0, 0, 0, 0.5); /* Color and transparency of the scrollbar thumb */
   border-radius: 10px; /* Rounded corners for the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the thumb on hover */
+  background: rgba(0, 0, 0, 0.8); /* Darker on hover */
 }
 
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1); /* Thumb color and track color */
+}
+
+/* Smooth scrolling */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }

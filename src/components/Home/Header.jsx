@@ -25,7 +25,7 @@ const Header = () => {
             A virtual space where Anyone can become a complete Full stack developer by project based learning 
             <span className='block font-semibold md:mt-4'>(HTML , CSS ,JS , Mongo DB, Node JS, React JS , Tailwind and AI)</span>
           </p>
-          <div className='w-fit px-6 py-2 bg-gradient-to-l to-red-400 from-orange-400 font-semibold rounded-full mt-8'>
+          <div className='w-fit px-6 py-2 bg-gradient-to-l to-yellow-300 from-red-500 font-semibold rounded-full mt-8 border-4 border-green-950'>
             <Button children={'Start Learning at ₹ 250'} className='text-black' type='button' onClick={() => navigate('/register')} />
           </div>
         </div>
