@@ -1,6 +1,9 @@
 import React from 'react'
 import { DivItem } from '../FormHooks'
+import Infinite from '../../assets/Image/Infinite.png'
 import Translate from '../../assets/Image/Translate.png'
+import Monitoring from '../../assets/Image/Monitoring.png'
+import AI from '../../assets/Image/AI.png'
 
 const Course = () => {
   return (
@@ -13,19 +16,19 @@ const Course = () => {
             <h1 className='text-white text-opacity-80'>Course Language: hindi, English</h1>
           </div>
           <div className='md:w-32 w-1/2 md:px-0 px-6 text-left flex gap-x-2 justify-center items-center'>
-            <img src={Translate} alt="Language" className='w-12 h-12' />
+            <img src={Infinite} alt="Language" className='w-16 h-16' />
             <h1 className='text-white text-opacity-80'>Unlimited Guided Projects</h1>
           </div>
           <div className='md:w-32 w-1/2 md:px-0 px-6 text-left flex gap-x-2 justify-center items-center'>
-            <img src={Translate} alt="Language" className='w-12 h-12' />
+            <img src={Infinite} alt="Language" className='w-16 h-16' />
             <h1 className='text-white text-opacity-80'>Unlimited Free Resources</h1>
           </div>
           <div className='md:w-32 w-1/2 md:px-0 px-6 text-left flex gap-x-2 justify-center items-center'>
-            <img src={Translate} alt="Language" className='w-12 h-12' />
+            <img src={Monitoring} alt="Language" className='w-16 h-16' />
             <h1 className='text-white text-opacity-80'>Live Mentor Feedback</h1>
           </div>
           <div className='md:w-32 w-1/2 md:px-0 px-6 text-left flex gap-x-2 justify-center items-center'>
-            <img src={Translate} alt="Language" className='w-12 h-12' />
+            <img src={AI} alt="Language" className='w-16 h-16' />
             <h1 className='text-white text-opacity-80'>AI tools covered</h1>
           </div>
         </div>

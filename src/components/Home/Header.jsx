@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <header className='w-full px-4 md:flex md:justify-center md:items-center mt-10 md:mt-16 gap-10 md:pr-20 md:pl-20'>
         <div className='md:w-1/2'>
-          <div className='w-fit px-6 py-2 bg-gradient-to-l to-red-400 from-orange-400 font-semibold rounded-full text-black border-2 border-red-500'>
+          <div className='w-fit px-6 py-2 bg-black font-semibold rounded-full text-white border-2 border-red-500'>
             <p>AI Powered Curriculum</p>
           </div>
           <h1 className='font-bold text-3xl md:text-6xl stroke-lime-100 mt-6 md:mt-8'>
