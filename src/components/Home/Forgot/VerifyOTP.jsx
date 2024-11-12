@@ -40,7 +40,7 @@ const VerifyOTP = () => {
                             pattern: /^[0-9]{4,6}$/, // added pattern validation for OTP
                         })} 
                     />
-                    {errors.otp && <p className='text-red-500'>Invalid OTP</p>}
+                    {errors.otp && <p className='text-red-500 text-sm'>Invalid OTP</p>}
                     <Button children={'Verify OTP'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} />
                 </form>
             </div>

@@ -45,7 +45,7 @@ const Login = () => {
               required: true
             })} 
           />
-          {errors.email && <p className='text-red-500'>Email is required</p>}
+          {errors.email && <p className='text-red-500 text-sm'>Email is required</p>}
           
           <div className="relative mt-2">
               <Input 
@@ -64,7 +64,7 @@ const Login = () => {
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
                   onClick={() => setIsPasswordVisiable(!isPasswordVisiable)} 
               />
-              {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+              {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
           </div>
           <div className='pl-2 mt-1'>
             <Link to={'/forgetpassword'} className='text-sm text-blue-600 shadow-inner'>Forget password?</Link>

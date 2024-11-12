@@ -41,7 +41,7 @@ const Forget = () => {
                         required: true,
                         validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 'Please Enter Proper Email Address'
                     })} />
-                    {errors.email && <p className='text-red-600'>{errors.email.message}</p>}
+                    {errors.email && <p className='text-red-500 text-sm'>Email is required</p>}
                     <div className='pl-2 mt-1'>
                         <Link to={'/login'} className='text-sm text-blue-600 shadow-inner'>go to Login</Link>
                     </div>

@@ -50,7 +50,7 @@ const Password = () => {
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
                         onClick={() => setIsPasswordVisible(!isPasswordVisible)} 
                     />
-                    {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                    {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
                 </div>
                 <div className="relative mt-2">
                     <Input 
@@ -69,7 +69,7 @@ const Password = () => {
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" 
                         onClick={() => setIsConfirmPasswordVisible(!isConfirmPasswordVisible)} 
                     />
-                    {errors.confirmpassword && <p className='text-red-500'>{errors.confirmpassword.message}</p>}
+                    {errors.confirmpassword && <p className='text-red-500 text-sm'>{errors.confirmpassword.message}</p>}
                 </div>
                 <Button children={'Change Password'} className='w-full h-10 md:mt-5 mt-8 bg-gradient-to-r from-green-600 to-orange-600 ' type={'submit'} />
             </form>
