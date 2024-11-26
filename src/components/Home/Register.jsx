@@ -30,7 +30,7 @@ const Register = () => {
   }
 
   return (
-    <div className='w-full h-[60vh] mt-24 bg-opacity-5 rounded-2xl bg-white  p-2 md:w-1/2 md:mx-auto md:my-auto md:h-[60vh] lg:min-w-1/3 lg:w-1/3 lg:h-[68vh]'>
+    <div className='w-full h-[60vh] mt-24 md:mt-24 bg-opacity-5 rounded-2xl bg-white  p-2 md:w-1/2 md:mx-auto md:my-auto md:h-[60vh] lg:min-w-1/3 lg:w-1/3 lg:h-[68vh]'>
       <div className='flex items-start justify-end w-full pr-4 pt-2'>
         <Button children={<FontAwesomeIcon icon={faXmark} />} className='w-fit h-8 bg-white bg-opacity-20' onClick={goToNavbar} />
       </div>

@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import {Register, Login, Forget, MainPage, Layout} from './index'
 import VerifyOTP from './Forgot/VerifyOTP'
 import Password from './Forgot/Password'
+import Dashboard from '../Dashboard/Dashboard'
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
                 <Route path='/forgetpassword' element={<Forget />} />
                 <Route path='/password' element={<VerifyOTP />}/>
                 <Route path='/newpassword' element={<Password />} />
+                <Route path='/Dashboard' element={<Dashboard/>} />
             </Route>
         )     
    )
